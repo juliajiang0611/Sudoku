@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="114.37187500000002" y="-101.0">coen275TeamProjectGUI.SudokuCell</node>
+    <node x="99.57187500000006" y="914.0">coen275TeamProjectGUI.SelectGameFrame</node>
+    <node x="104.071875" y="380.0">coen275TeamProjectGUI.SudokuBoard</node>
+    <node x="0.0" y="124.0">coen275TeamProjectGUI.SelectNumFrame</node>
+    <node x="99.57187500000006" y="636.0">coen275TeamProjectGUI.SudokuGridFrame</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="coen275TeamProjectGUI.SudokuBoard" target="coen275TeamProjectGUI.SudokuCell">
+      <point x="56.19999999999999" y="-103.0" />
+      <point x="300.771875" y="355.0" />
+      <point x="302.5" y="355.0" />
+      <point x="302.5" y="99.0" />
+      <point x="300.771875" y="99.0" />
+      <point x="52.39999999999998" y="37.0" />
+    </edge>
+    <edge source="coen275TeamProjectGUI.SelectGameFrame" target="coen275TeamProjectGUI.SudokuGridFrame">
+      <point x="-71.75" y="-59.0" />
+      <point x="-71.75" y="114.0" />
+    </edge>
+    <edge source="coen275TeamProjectGUI.SudokuGridFrame" target="coen275TeamProjectGUI.SudokuBoard">
+      <point x="71.74999999999994" y="-114.0" />
+      <point x="70.25" y="103.0" />
+    </edge>
+    <edge source="coen275TeamProjectGUI.SudokuBoard" target="coen275TeamProjectGUI.SelectNumFrame">
+      <point x="-56.19999999999999" y="-103.0" />
+      <point x="188.37187500000002" y="355.0" />
+      <point x="210.75" y="355.0" />
+      <point x="70.25" y="103.0" />
+    </edge>
+    <edge source="coen275TeamProjectGUI.SelectNumFrame" target="coen275TeamProjectGUI.SudokuCell">
+      <point x="-70.25" y="-103.0" />
+      <point x="70.25" y="99.0" />
+      <point x="143.571875" y="99.0" />
+      <point x="-104.80000000000001" y="37.0" />
+    </edge>
+    <edge source="coen275TeamProjectGUI.SudokuGridFrame" target="coen275TeamProjectGUI.SelectGameFrame">
+      <point x="71.75" y="114.0" />
+      <point x="71.75" y="-59.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="100.0" />
+  <SelectedNodes>
+    <node>coen275TeamProjectGUI.SudokuCell</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
