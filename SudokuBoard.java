@@ -21,8 +21,8 @@ public class SudokuBoard extends JPanel implements MouseListener {
             for (int j = 0; j < 9; j++) {
 
                 sudokuCells [i][j] = new SudokuCell();
-                sudokuCells [i][j].setLocation(20 + i * 50 + (i / 3) * 5, 20 + j * 50
-                        + (j / 3) * 5);
+                sudokuCells [i][j].setLocation(20 + j * 50 + (j / 3) * 5, 20 + i * 50
+                        + (i / 3) * 5);
                 //set cell row and col.
                 sudokuCells[i][j].setPosition(i,j);
                 if(maps[i][j]!= 0){
@@ -73,10 +73,10 @@ public class SudokuBoard extends JPanel implements MouseListener {
             for (int j = 0; j < 9; j++) {
                 this.remove(sudokuCells[i][j]);
                 sudokuCells [i][j] = new SudokuCell();
-                sudokuCells [i][j].setLocation(20 + i * 50 + (i / 3) * 5, 20 + j * 50
-                        + (j / 3) * 5);
+                sudokuCells [i][j].setLocation(20 + j * 50 + (j / 3) * 5, 20 + i * 50
+                        + (i / 3) * 5);
                 //set cell row and col.
-                sudokuCells[i][j].setPosition(i,j);
+                sudokuCells[i][j].setPosition(j,i);
                 if(tmps[i][j]!= 0){
                     sudokuCells[i][j].setText("" + tmps[i][j]);
                 }else{
