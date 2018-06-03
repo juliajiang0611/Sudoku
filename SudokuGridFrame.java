@@ -15,29 +15,50 @@ public class SudokuGridFrame extends JFrame implements ActionListener {
     private SudokuBoard sudokuBoard;
     public Timer userTimeAction;
     public long usedTime = 0;
+    private int diffculty;
 
     public SudokuGridFrame(){
 
           init();
     }
 
+    public SudokuGridFrame(int n){
+       this.diffculty = n;
+       init();
+       
+  }
     public void init(){
         JPanel TimerPanel = new JPanel();
+        JLabel level = new JLabel();
+        level.setFont(new Font("Arial",Font.PLAIN, 30));
+        level.setBounds(300, 5, 200, 100);
+        TimerPanel.setBackground(new Color(251, 244, 249));
+        if(this.diffculty == 1)
+        {
+        	level.setText("Easy");
+        }
+        else
+        {
+        	level.setText("Hard");
+        }
+        
         addBoard();
         addButtons();
         TimerPanel.setBounds(600,425,300,200);
         addTimerPanel(TimerPanel);
         this.setLayout(null);
+        this.add(level);
         this.add(TimerPanel);
         this.setVisible(true);
         this.setSize(900,700);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.getContentPane().setBackground(new Color(251, 244, 249));
 
     }
 
 
     public void addBoard(){
-        sudokuBoard = new SudokuBoard();
+        sudokuBoard = new SudokuBoard(this.diffculty);
         sudokuBoard.setBounds(75,75,500,500);
         sudokuBoard.setBackground(Color.pink);
         sudokuBoard.setOpaque(true);
@@ -60,9 +81,10 @@ public class SudokuGridFrame extends JFrame implements ActionListener {
         newGame = new JButton("New");
         newGame.setBounds(625,325,100,50);
         newGame.addActionListener(this);
-        this.add(solution);
+        //this.add(solution);
         this.add(clear);
         this.add(newGame);
+        this.setLocation(250, 70);
     }
 
     public int getElapsedTime(int startTime,int endTime){
@@ -73,6 +95,7 @@ public class SudokuGridFrame extends JFrame implements ActionListener {
     public void addTimerPanel(JPanel  panelComponent){
 
             JPanel panelTime = new JPanel();
+            panelTime.setBackground(new Color(251, 244, 249));
             panelTime.setBorder(new TitledBorder("Timer"));
             panelTime.setLayout(new GridLayout(2, 1));
 
@@ -123,6 +146,7 @@ public class SudokuGridFrame extends JFrame implements ActionListener {
         if(source == solution){
             /*TODO
             * show up up the solution*/
+        	sudokuBoard.printUpdatedArray();
         }
 
         if(source == clear){
@@ -135,6 +159,10 @@ public class SudokuGridFrame extends JFrame implements ActionListener {
         if(source == newGame){
             this.dispose();
             new SelectGameFrame();
+        }
+        if(sudokuBoard.getIsfinshed()){
+            this.dispose();
+            new HighScoreFrame();
         }
     }
 

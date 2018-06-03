@@ -59,6 +59,7 @@ public class SelectGameFrame extends JFrame implements ActionListener {
         getContentPane().setBackground(new Color(251, 244, 249));
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocation(300, 10);
 
     }
 
@@ -82,13 +83,14 @@ public class SelectGameFrame extends JFrame implements ActionListener {
             setDifficulty(1);
             //close current GUI
             this.dispose();
-            new SudokuGridFrame();
-
+            //new SudokuGridFrame(1);	//TODO change after generating array
+            new SudokuGridFrame(1);
         }
         if( source == hard ){
             setDifficulty(2);
             this.dispose();
-            new SudokuGridFrame();
+            //new SudokuGridFrame(2);	//TODO change after generating array
+            new SudokuGridFrame(2);
         }
 
         if(source == highScore ){
